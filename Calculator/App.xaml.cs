@@ -42,6 +42,7 @@ namespace Calculator
         protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
         {
             m_window = new MainWindow();
+            m_window.AppWindow.Resize(new Windows.Graphics.SizeInt32(400, 600));
             m_window.Activate();
         }
 
