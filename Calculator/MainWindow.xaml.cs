@@ -27,5 +27,10 @@ namespace Calculator
         {
             this.InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            outputTextBlock.Text = "Result";
+        }
     }
 }
