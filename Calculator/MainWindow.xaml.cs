@@ -200,15 +200,29 @@ namespace Calculator
 
         private void RemoveBtn_Click(object sender, RoutedEventArgs e)
         {
-            var temp = outputTextBlock.Text
+            if (outputTextBlock.Text != "")
+            {
+                var temp = outputTextBlock.Text
                 .Split(" ", StringSplitOptions.RemoveEmptyEntries)
                 .ToArray();
 
-            int lastIndex = temp.Length - 1;
+                int lastIndex = temp.Length - 1;
 
-            temp[lastIndex] = temp[lastIndex].Remove(temp[lastIndex].Length - 1, 1);
+                temp[lastIndex] = temp[lastIndex].Remove(temp[lastIndex].Length - 1, 1);
 
-            outputTextBlock.Text = String.Join(" ", temp);
+                if (temp[lastIndex] == "")
+                {
+                    outputTextBlock.Text = "0";
+                }
+                else
+                {
+                    outputTextBlock.Text = String.Join(" ", temp);
+                }
+            }
+            else
+            {
+                outputTextBlock.Text = "0";
+            }
         }
 
         private void EqualsBtn_Click(object sender, RoutedEventArgs e)
