@@ -200,7 +200,12 @@ namespace Calculator
 
         private void RemoveBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (outputTextBlock.Text != "")
+            //TODO: think of a better way to check whether the text is a number
+            if (outputTextBlock.Text == "Result")
+            {
+                outputTextBlock.Text = "0";
+            }
+            else if (outputTextBlock.Text != "")
             {
                 var temp = outputTextBlock.Text
                 .Split(" ", StringSplitOptions.RemoveEmptyEntries)
