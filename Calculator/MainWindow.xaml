@@ -18,6 +18,7 @@
                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
                     <Setter Property="VerticalContentAlignment" Value="Center"/>
                     <Setter Property="CornerRadius" Value="4"/>
+                    <Setter Property="BorderThickness" Value="0"/>
                 </Style>
             </Grid.Resources>
 
@@ -37,140 +38,227 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock x:Name="outputTextBlock" 
-                Margin="10"
-                Text="0"
-                FontSize="30"
+            <ScrollViewer
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Center"
-                HorizontalTextAlignment="Right"
                 Grid.Row="0"
-                Grid.ColumnSpan="4"/>
+                Grid.ColumnSpan="4">
+                <TextBlock x:Name="outputTextBlock"
+                    TextWrapping="Wrap"
+                    Margin="10"
+                    Text="0"
+                    FontSize="30"
+                    HorizontalTextAlignment="Right"/>
+            </ScrollViewer>
+
 
             <Button x:Name="deleteBtn" 
                 Style="{StaticResource ButtonStyle}"
                 Content="C" 
-                Click="Button_Click" 
+                Click="DeleteBtn_Click" 
                 Grid.Row="1" 
-                Grid.Column="0"/>
+                Grid.Column="0">
+                <Button.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="Delete" Invoked="DeleteBtn_Click_With_Key"/>
+                </Button.KeyboardAccelerators>
+            </Button>
             <Button x:Name="percentageBtn" 
                 Style="{StaticResource ButtonStyle}"
                 Content="%" 
-                Click="Button_Click" 
+                Click="ArithmeticBtn_Click" 
                 Grid.Row="1" 
                 Grid.Column="1"/>
             <Button x:Name="negateBtn"
                 Style="{StaticResource ButtonStyle}"
                 Content="+/-"
-                Click="Button_Click"
+                Click="NegateBtn_Click"
                 Grid.Row="1"
                 Grid.Column="2"/>
             <Button x:Name="dividenBtn"
                 Style="{StaticResource ButtonStyle}"
                 Content="/"
-                Click="Button_Click" 
+                Click="ArithmeticBtn_Click" 
                 Grid.Row="1" 
-                Grid.Column="3"/>
+                Grid.Column="3">
+                <Button.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="Divide" Invoked="DivideBtn_Click_Witk_Key"/>
+                </Button.KeyboardAccelerators>
+            </Button>
+
 
             <Button x:Name="sevenBtn"
                 Style="{StaticResource ButtonStyle}"
                 Content="7"
-                Click="Button_Click" 
+                Click="NumberBtn_Clicked" 
                 Grid.Row="2" 
-                Grid.Column="0"/>
+                Grid.Column="0">
+                <Button.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="Number7" Invoked="SeventBtn_Click_Witk_Key"/>
+                    <KeyboardAccelerator Key="NumberPad7" Invoked="SeventBtn_Click_Witk_Key"/>
+                </Button.KeyboardAccelerators>
+            </Button>
             <Button x:Name="eightBtn"
                 Style="{StaticResource ButtonStyle}"
                 Content="8"
-                Click="Button_Click"
+                Click="NumberBtn_Clicked"
                 Grid.Row="2" 
-                Grid.Column="1"/>
+                Grid.Column="1">
+                <Button.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="Number8" Invoked="EightBtn_Click_With_Key"/>
+                    <KeyboardAccelerator Key="NumberPad8" Invoked="EightBtn_Click_With_Key"/>
+                </Button.KeyboardAccelerators>
+            </Button>
             <Button x:Name="nineBtn"
                 Style="{StaticResource ButtonStyle}"
                 Content="9" 
-                Click="Button_Click"
+                Click="NumberBtn_Clicked"
                 Grid.Row="2" 
-                Grid.Column="2"/>
+                Grid.Column="2">
+                <Button.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="Number9" Invoked="NineBtn_Click_With_Key"/>
+                    <KeyboardAccelerator Key="NumberPad9" Invoked="NineBtn_Click_With_Key"/>
+                </Button.KeyboardAccelerators>
+            </Button>
             <Button x:Name="multiplyBtn" 
                 Style="{StaticResource ButtonStyle}"
                 Content="*"
-                Click="Button_Click" 
+                Click="ArithmeticBtn_Click" 
                 Grid.Row="2" 
-                Grid.Column="3"/>
+                Grid.Column="3">
+                <Button.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="Multiply" Invoked="MultiplyBtn_Click_Witk_Key"/>
+                </Button.KeyboardAccelerators>
+            </Button>
 
             <Button x:Name="fourBtn"
                 Style="{StaticResource ButtonStyle}"
                 Content="4" 
-                Click="Button_Click"
+                Click="NumberBtn_Clicked"
                 Grid.Row="3" 
-                Grid.Column="0"/>
+                Grid.Column="0">
+                <Button.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="Number4" Invoked="FourBtn_Click_Witk_Key"/>
+                    <KeyboardAccelerator Key="NumberPad4" Invoked="FourBtn_Click_Witk_Key"/>
+                </Button.KeyboardAccelerators>
+            </Button>
             <Button x:Name="fiveBtn" 
                 Style="{StaticResource ButtonStyle}"
                 Content="5" 
-                Click="Button_Click"
+                Click="NumberBtn_Clicked"
                 Grid.Row="3" 
-                Grid.Column="1"/>
+                Grid.Column="1">
+                <Button.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="Number5" Invoked="FiveBtn_Click_Witk_Key"/>
+                    <KeyboardAccelerator Key="NumberPad5" Invoked="FiveBtn_Click_Witk_Key"/>
+                </Button.KeyboardAccelerators>
+            </Button>
             <Button x:Name="sixBtn"
                 Style="{StaticResource ButtonStyle}"
                 Content="6" 
-                Click="Button_Click"
+                Click="NumberBtn_Clicked"
                 Grid.Row="3" 
-                Grid.Column="2"/>
+                Grid.Column="2">
+                <Button.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="Number6" Invoked="SixBtn_Click_Witk_Key"/>
+                    <KeyboardAccelerator Key="NumberPad6" Invoked="SixBtn_Click_Witk_Key"/>
+                </Button.KeyboardAccelerators>
+            </Button>
             <Button x:Name="minusBtn"
                 Style="{StaticResource ButtonStyle}" 
                 Content="-" 
-                Click="Button_Click" 
+                Click="ArithmeticBtn_Click" 
                 Grid.Row="3" 
-                Grid.Column="3"/>
+                Grid.Column="3">
+                <Button.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="Subtract" Invoked="MinusBtn_Click_With_Key"/>
+                </Button.KeyboardAccelerators>
+            </Button>
 
             <Button x:Name="oneBtn"
                 Style="{StaticResource ButtonStyle}"
                 Content="1"
-                Click="Button_Click"
+                Click="NumberBtn_Clicked"
                 Grid.Row="4"
-                Grid.Column="0"/>
+                Grid.Column="0">
+                <Button.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="Number1" Invoked="OneBtn_Click_With_Key"/>
+                    <KeyboardAccelerator Key="NumberPad1" Invoked="OneBtn_Click_With_Key"/>
+                </Button.KeyboardAccelerators>
+            </Button>
             <Button x:Name="twoBtn" 
                 Style="{StaticResource ButtonStyle}"
                 Content="2" 
-                Click="Button_Click"
+                Click="NumberBtn_Clicked"
                 Grid.Row="4"
-                Grid.Column="1"/>
+                Grid.Column="1">
+                <Button.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="Number2" Invoked="TwoBtn_Click_With_Key"/>
+                    <KeyboardAccelerator Key="NumberPad2" Invoked="TwoBtn_Click_With_Key"/>
+                </Button.KeyboardAccelerators>
+            </Button>
             <Button x:Name="threeBtn" 
                 Style="{StaticResource ButtonStyle}"
                 Content="3" 
-                Click="Button_Click" 
+                Click="NumberBtn_Clicked" 
                 Grid.Row="4"
-                Grid.Column="2"/>
+                Grid.Column="2">
+                <Button.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="Number3" Invoked="ThreeBtn_Click_With_Key"/>
+                    <KeyboardAccelerator Key="NumberPad3" Invoked="ThreeBtn_Click_With_Key"/>
+                </Button.KeyboardAccelerators>
+            </Button>
             <Button x:Name="plusBtn"
                 Style="{StaticResource ButtonStyle}"
                 Content="+" 
-                Click="Button_Click"
+                Click="ArithmeticBtn_Click"
                 Grid.Row="4" 
-                Grid.Column="3"/>
+                Grid.Column="3">
+                <Button.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="Add" Invoked="PlusBtn_Click_With_Key"/>
+                </Button.KeyboardAccelerators>
+            </Button>
 
             <Button x:Name="decimalPointBtn" 
                 Style="{StaticResource ButtonStyle}"
                 Content="."
-                Click="Button_Click"
+                Click="DecimalBtn_Clicked"
                 Grid.Row="5"
-                Grid.Column="0"/>
+                Grid.Column="0">
+                <Button.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="Decimal" Invoked="DecimalBtn_Click_With_Key"/>
+                </Button.KeyboardAccelerators>
+            </Button>
             <Button x:Name="zeroBtn" 
                 Style="{StaticResource ButtonStyle}"
                 Content="0"
-                Click="Button_Click"
+                Click="NumberBtn_Clicked"
                 Grid.Row="5" 
-                Grid.Column="1"/>
+                Grid.Column="1">
+                <Button.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="Number0" Invoked="ZeroBtn_Click_With_Key"/>
+                    <KeyboardAccelerator Key="NumberPad0" Invoked="ZeroBtn_Click_With_Key"/>
+                </Button.KeyboardAccelerators>
+            </Button>
             <Button x:Name="removeBtn" 
                 Style="{StaticResource ButtonStyle}"
-                Content="&lt;"
-                Click="Button_Click" 
+                Click="RemoveBtn_Click" 
                 Grid.Row="5" 
-                Grid.Column="2"/>
+                Grid.Column="2">
+                <FontIcon Glyph="&#xE94F;" />
+                <Button.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="Back" Invoked="RemoveBtn_Click_With_Key"/>
+                </Button.KeyboardAccelerators>
+            </Button>
             <Button x:Name="equalsBtn" 
                 Style="{StaticResource ButtonStyle}"
                 Content="=" 
-                Click="Button_Click"
+                Click="EqualsBtn_Click"
                 Grid.Row="5" 
-                Grid.Column="3"/>
+                Grid.Column="3">
+                <Button.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="Enter" Invoked="EqualsBtn_Click_With_Key"/>
+                </Button.KeyboardAccelerators>
+            </Button>
         </Grid>
     </Grid>
 </Window>
