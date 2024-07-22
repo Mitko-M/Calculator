@@ -216,8 +216,9 @@ namespace Calculator
 
         private void EqualsBtn_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: make a service class with the bussiness logic
-            outputTextBlock.Text = "Result";
+            Calculator calc = new Calculator(outputTextBlock.Text);
+
+            outputTextBlock.Text = calc.Calculate();
         }
 
         private void ArithmeticBtn_Click(object sender, RoutedEventArgs e)
