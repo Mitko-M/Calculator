@@ -19,7 +19,7 @@ namespace Calculator
             input = _input;
         }
 
-        public string Calculate(string calculatorInput = null)
+        public string Calculate()
         {
             string result = "";
 

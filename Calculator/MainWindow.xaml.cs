@@ -15,22 +15,6 @@ namespace Calculator
     /// </summary>
     public sealed partial class MainWindow : Window
     {
-        private const string one = "1";
-        private const string two = "2";
-        private const string three = "3";
-        private const string four = "4";
-        private const string five = "5";
-        private const string six = "6";
-        private const string seven = "7";
-        private const string eight = "8";
-        private const string nine = "9";
-
-        private const string multiply = "*";
-        private const string divide = "/";
-        private const string percentage = "%";
-        private const string minus = "-";
-        private const string plus = "+";
-
         public MainWindow()
         {
             this.InitializeComponent();
@@ -215,7 +199,7 @@ namespace Calculator
 
                 temp[lastIndex] = temp[lastIndex].Remove(temp[lastIndex].Length - 1, 1);
 
-                if (temp[lastIndex] == "")
+                if (temp[0] == "")
                 {
                     outputTextBlock.Text = "0";
                 }
