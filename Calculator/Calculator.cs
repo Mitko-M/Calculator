@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Windows.Globalization.NumberFormatting;
 
@@ -80,7 +81,14 @@ namespace Calculator
                     double num2 = listWithNumbers[index + 1];
                     listWithNumbers.RemoveAt(index + 1);
 
-                    listWithNumbers[index] = num1 / num2;
+                    if (num2 == 0)
+                    {
+                        return "You can't divide by zero!";
+                    }
+                    else
+                    {
+                        listWithNumbers[index] = num1 / num2;
+                    }
                 }
                 else if (listWithArithmeticActions.Contains("+"))
                 {
