@@ -45,7 +45,18 @@ namespace Calculator
 
             while (listWithArithmeticActions.Count > 0 && listWithNumbers.Count > 1)
             {
-                if (listWithArithmeticActions.Contains("*"))
+                if (listWithArithmeticActions.Contains("%"))
+                {
+                    int index = listWithArithmeticActions.IndexOf("%");
+                    listWithArithmeticActions.RemoveAt(index);
+
+                    double num1 = listWithNumbers[index];
+                    double num2 = listWithNumbers[index + 1];
+                    listWithNumbers.RemoveAt(index + 1);
+
+                    listWithNumbers[index] = (0.01 * num1) * num2;
+                }
+                else if (listWithArithmeticActions.Contains("*"))
                 {
                     int index = listWithArithmeticActions.IndexOf("*");
                     listWithArithmeticActions.RemoveAt(index);
@@ -91,7 +102,7 @@ namespace Calculator
                 }
             }
 
-            result = $"={listWithNumbers[0]:f2}";
+            result = $"={listWithNumbers[0]}";
 
             return result;
         }
