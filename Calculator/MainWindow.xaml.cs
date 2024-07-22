@@ -184,8 +184,7 @@ namespace Calculator
 
         private void RemoveBtn_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: think of a better way to check whether the text is a number
-            if (outputTextBlock.Text == "Result")
+            if (outputTextBlock.Text.Contains("="))
             {
                 outputTextBlock.Text = "0";
             }
@@ -216,9 +215,12 @@ namespace Calculator
 
         private void EqualsBtn_Click(object sender, RoutedEventArgs e)
         {
-            Calculator calc = new Calculator(outputTextBlock.Text);
+            if (outputTextBlock.Text != "0")
+            {
+                Calculator calc = new Calculator(outputTextBlock.Text);
 
-            outputTextBlock.Text = calc.Calculate();
+                outputTextBlock.Text = calc.Calculate();
+            }
         }
 
         private void ArithmeticBtn_Click(object sender, RoutedEventArgs e)

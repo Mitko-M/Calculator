@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Windows.Globalization.NumberFormatting;
 
 namespace Calculator
 {
@@ -50,8 +51,12 @@ namespace Calculator
                     listWithArithmeticActions.RemoveAt(index);
 
                     double num1 = listWithNumbers[index];
-                    double num2 = listWithNumbers[index + 1];
-                    listWithNumbers.RemoveAt(index + 1);
+                    double num2 = 1;
+                    if (index < listWithNumbers.Count - 1)
+                    {
+                        num2 = listWithNumbers[index + 1];
+                        listWithNumbers.RemoveAt(index + 1);
+                    }
 
                     listWithNumbers[index] = (0.01 * num1) * num2;
                 }
