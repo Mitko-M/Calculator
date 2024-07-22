@@ -190,7 +190,8 @@ namespace Calculator
 
         private void RemoveBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (outputTextBlock.Text.Contains("="))
+            if (outputTextBlock.Text.Contains("=") ||
+                Char.IsLetter(outputTextBlock.Text[0]))
             {
                 outputTextBlock.Text = "0";
             }
