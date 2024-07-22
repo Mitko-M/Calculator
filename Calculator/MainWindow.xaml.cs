@@ -224,7 +224,7 @@ namespace Calculator
         {
             if (outputTextBlock.Text != "0")
             {
-                if (Char.IsDigit(outputTextBlock.Text[0]))
+                if (Char.IsDigit(outputTextBlock.Text[0]) || outputTextBlock.Text[0] == '-')
                 {
                     Calculator calc = new Calculator(outputTextBlock.Text);
 
