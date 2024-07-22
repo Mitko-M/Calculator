@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using Windows.Globalization.NumberFormatting;
 
@@ -34,7 +35,7 @@ namespace Calculator
             {
                 double output;
 
-                if (double.TryParse(number, out output))
+                if (double.TryParse(number, NumberStyles.Float, CultureInfo.InvariantCulture, out output))
                 {
                     listWithNumbers.Add(output);
                 }
