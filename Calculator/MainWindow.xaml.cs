@@ -224,15 +224,15 @@ namespace Calculator
         {
             if (outputTextBlock.Text != "0")
             {
-                if (outputTextBlock.Text.Contains("="))
-                {
-                    outputTextBlock.Text = "0";
-                }
-                else
+                if (Char.IsDigit(outputTextBlock.Text[0]))
                 {
                     Calculator calc = new Calculator(outputTextBlock.Text);
 
                     outputTextBlock.Text = calc.Calculate();
+                }
+                else
+                {
+                    outputTextBlock.Text = "0";
                 }
             }
         }

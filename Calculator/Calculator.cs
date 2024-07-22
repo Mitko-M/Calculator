@@ -114,7 +114,14 @@ namespace Calculator
                 }
             }
 
-            result = $"={listWithNumbers[0]}";
+            if (listWithNumbers[0] > double.MaxValue)
+            {
+                result = "The number is too large!";
+            }
+            else
+            {
+                result = $"={listWithNumbers[0]}";
+            }
 
             return result;
         }
