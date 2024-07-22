@@ -4,6 +4,7 @@ using Microsoft.UI.Xaml.Input;
 using System;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Media.MediaProperties;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -15,6 +16,8 @@ namespace Calculator
     /// </summary>
     public sealed partial class MainWindow : Window
     {
+        private string[] actions = { "/", "-", "+", "*" };
+
         public MainWindow()
         {
             this.InitializeComponent();
@@ -142,16 +145,19 @@ namespace Calculator
 
                     int lastNumIndex = temp.Length - 1;
 
-                    if (double.Parse(temp[lastNumIndex]) > 0)
+                    if (!actions.Contains(temp[lastNumIndex]))
                     {
-                        temp[lastNumIndex] = $"-{temp[lastNumIndex]}";
-                    }
-                    else
-                    {
-                        temp[lastNumIndex] = temp[lastNumIndex].Remove(0, 1);
-                    }
+                        if (double.Parse(temp[lastNumIndex]) > 0)
+                        {
+                            temp[lastNumIndex] = $"-{temp[lastNumIndex]}";
+                        }
+                        else
+                        {
+                            temp[lastNumIndex] = temp[lastNumIndex].Remove(0, 1);
+                        }
 
-                    outputTextBlock.Text = String.Join(" ", temp);
+                        outputTextBlock.Text = String.Join(" ", temp);
+                    }
                 }
                 else
                 {
