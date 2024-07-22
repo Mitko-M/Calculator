@@ -224,9 +224,16 @@ namespace Calculator
         {
             if (outputTextBlock.Text != "0")
             {
-                Calculator calc = new Calculator(outputTextBlock.Text);
+                if (outputTextBlock.Text.Contains("="))
+                {
+                    outputTextBlock.Text = "0";
+                }
+                else
+                {
+                    Calculator calc = new Calculator(outputTextBlock.Text);
 
-                outputTextBlock.Text = calc.Calculate();
+                    outputTextBlock.Text = calc.Calculate();
+                }
             }
         }
 
