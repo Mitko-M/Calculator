@@ -1,5 +1,5 @@
 # Calculator
-A simple arithmetic calculator created with WinUI
+**A simple arithmetic calculator created with WinUI**
 </br>
 ![Screenshot 2024-07-26 232522](https://github.com/user-attachments/assets/50f2f4be-1725-49e6-95d6-6c94481d52f9)
 </br>
