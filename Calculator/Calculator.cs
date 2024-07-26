@@ -91,18 +91,7 @@ namespace Calculator
                         listWithNumbers[index] = num1 / num2;
                     }
                 }
-                else if (listWithArithmeticActions.Contains("+"))
-                {
-                    int index = listWithArithmeticActions.IndexOf("+");
-                    listWithArithmeticActions.RemoveAt(index);
-
-                    double num1 = listWithNumbers[index];
-                    double num2 = listWithNumbers[index + 1];
-                    listWithNumbers.RemoveAt(index + 1);
-
-                    listWithNumbers[index] = num1 + num2;
-                }
-                else
+                else if (listWithArithmeticActions.Contains("-"))
                 {
                     int index = listWithArithmeticActions.IndexOf("-");
                     listWithArithmeticActions.RemoveAt(index);
@@ -112,6 +101,17 @@ namespace Calculator
                     listWithNumbers.RemoveAt(index + 1);
 
                     listWithNumbers[index] = num1 - num2;
+                }
+                else
+                {
+                    int index = listWithArithmeticActions.IndexOf("+");
+                    listWithArithmeticActions.RemoveAt(index);
+
+                    double num1 = listWithNumbers[index];
+                    double num2 = listWithNumbers[index + 1];
+                    listWithNumbers.RemoveAt(index + 1);
+
+                    listWithNumbers[index] = num1 + num2;
                 }
             }
 
